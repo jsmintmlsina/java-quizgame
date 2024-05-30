@@ -1,7 +1,6 @@
 package kbc;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -29,122 +28,124 @@ public class Quiztext extends JFrame implements ActionListener {
 
         public  Quiztext() {
             super("Quiz Game");
-            pnl1 = new JPanel();
-            pnl1.setBounds(100, 0, 1100, 600);
-            ImageIcon background = new ImageIcon("7227553.jpg");
-            JLabel backgroundLabel = new JLabel(background);
-            backgroundLabel.setSize(pnl1.getSize());
-            pnl1.add(backgroundLabel);
+            pnl1 = new JPanel(null);
+            pnl1.setSize(1500,800);
             add(pnl1);
-            setSize(1000, 800);
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setVisible(true);
+            JPanel backgroundPanel = new JPanel(){
+              protected void paintComponent(Graphics g) {
+                  super.paintComponent(g);
+                  ImageIcon background = new ImageIcon("7227553.jpg");
+                  g.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), this);
+              }
 
-        
+            };
+            backgroundPanel.setSize(1500,800);
+            backgroundPanel.setLayout(null);
+            pnl1.add(backgroundPanel);
+
 
             credit = new JLabel("Simple Quiz Game");
-            credit.setBounds(420, 100, 600, 100);
-            credit.setForeground(Color.BLACK);
-            credit.setFont(new Font("helvetica", Font.PLAIN, 60));
-            pnl1.add(credit);
+            credit.setBounds(420, 100, 900, 100);
+            credit.setForeground(Color.WHITE);
+            credit.setFont(new Font("helvetica", Font.PLAIN, 50));
+            backgroundPanel.add(credit);
 
-//        pnl2 = new JPanel();
-//        pnl2.setLayout(null);
-//        pnl2.setBounds(400,100,500,100);
-//        pnl2.setBackground(Color.BLACK);
-//        pnl1.add(pnl2);
+        pnl2 = new JPanel();
+       pnl2.setLayout(null);
+        pnl2.setBounds(400,100,500,100);
+        pnl2.setBackground(Color.BLACK);
+        backgroundPanel.add(pnl2);
 
             JLabel text = new JLabel("Play And Win");
             text.setBounds(500, 0, 700, 100);
-            text.setForeground(Color.BLACK);
+            text.setForeground(Color.WHITE);
             text.setFont(new Font("Helvetica", Font.PLAIN, 50));
-            pnl1.add(text);
+            backgroundPanel.add(text);
 
             line1 = new JLabel("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             line1.setBounds(0, 200, 2000, 100);
             line1.setForeground(Color.black);
-            pnl1.add(line1);
+            backgroundPanel.add(line1);
 
             text2 = new JLabel();
             text2.setBounds(300, 270, 2000, 100);
             text2.setForeground(Color.WHITE);
             text2.setFont(new Font("Aerial", Font.PLAIN, 30));
-            pnl1.add(text2);
+            backgroundPanel.add(text2);
 
             line2 = new JLabel("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             line2.setBounds(0, 350, 2000, 100);
             line2.setForeground(Color.black);
-            pnl1.add(line2);
+            backgroundPanel.add(line2);
 
             btn1 = new JButton();
             btn1.setBackground(Color.BLUE);
             btn1.setBounds(20, 450, 400, 50);
             btn1.addActionListener((ActionListener) this);
-            pnl1.add(btn1);
+            backgroundPanel.add(btn1);
 
             btn2 = new JButton();
             btn2.setBackground(Color.cyan);
             btn2.setBounds(800, 450, 400, 50);
             btn2.addActionListener(this);
-            pnl1.add(btn2);
+            backgroundPanel.add(btn2);
 
             btn3 = new JButton();
             btn3.setBackground(Color.cyan);
             btn3.setBounds(20, 550, 400, 50);
             btn3.addActionListener(this);
-            pnl1.add(btn3);
+            backgroundPanel.add(btn3);
 
             btn4 = new JButton();
             btn4.setBackground(Color.cyan);
             btn4.setBounds(800, 550, 400, 50);
             btn4.addActionListener(this);
-            pnl1.add(btn4);
+            backgroundPanel.add(btn4);
 
             btn5 = new JButton("Start Game!!");
             btn5.setBackground(Color.cyan);
             btn5.setBounds(400, 200, 200, 50);
             btn5.addActionListener(this);
-            pnl1.add(btn5);
+            backgroundPanel.add(btn5);
 
             btn6 = new JButton("50-50");
             btn6.setBackground(Color.cyan);
             btn6.setBounds(0, 90, 200, 50);
             btn6.addActionListener(this);
-            pnl1.add(btn6);
+            backgroundPanel.add(btn6);
 
             btn7 = new JButton("Audience Pole");
             btn7.setBackground(Color.cyan);
             btn7.setBounds(0, 150, 200, 50);
             btn7.addActionListener(this);
-            pnl1.add(btn7);
+            backgroundPanel.add(btn7);
 
             btn8 = new JButton("Restart Game");
             btn8.setBackground(Color.cyan);
             btn8.setBounds(700, 200, 200, 50);
             btn8.addActionListener(this);
-            pnl1.add(btn8);
+            backgroundPanel.add(btn8);
 
             ans = new JLabel();
             ans.setBounds(500, 500, 400, 50);
             ans.setForeground(Color.WHITE);
             ans.setFont(new Font("Aerial", Font.PLAIN, 20));
-            pnl1.add(ans);
+            backgroundPanel.add(ans);
 
             score = new JLabel();
             score.setBounds(1000, 50, 700, 100);
             score.setForeground(Color.WHITE);
             score.setFont(new Font("Aerial", Font.PLAIN, 20));
-            pnl1.add(score);
+            backgroundPanel.add(score);
 
 
-            setSize(1300, 700);
+            setSize(1000, 800);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setVisible(true);
-            setLayout(null);
             setLocationRelativeTo(null);
-            setDefaultCloseOperation(EXIT_ON_CLOSE);
 
          }
-        
+
 
         public void actionPerformed(ActionEvent jasmine) {
 
