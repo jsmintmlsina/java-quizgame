@@ -139,7 +139,7 @@ public class Quiztext extends JFrame implements ActionListener {
             backgroundPanel.add(score);
 
 
-            setSize(1000, 800);
+            setSize(1500, 800);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setVisible(true);
             setLocationRelativeTo(null);
