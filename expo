@@ -9,7 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
+import javax.swing.border.Border;
 
+import static javax.swing.BorderFactory.createEtchedBorder;
 
 
 public class Quiztext extends JFrame implements ActionListener {
@@ -34,7 +38,7 @@ public class Quiztext extends JFrame implements ActionListener {
             JPanel backgroundPanel = new JPanel(){
               protected void paintComponent(Graphics g) {
                   super.paintComponent(g);
-                  ImageIcon background = new ImageIcon("7227553.jpg");
+                  ImageIcon background = new ImageIcon("123.jpg");
                   g.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), this);
               }
 
@@ -45,20 +49,26 @@ public class Quiztext extends JFrame implements ActionListener {
 
 
             credit = new JLabel("Simple Quiz Game");
-            credit.setBounds(420, 100, 900, 100);
-            credit.setForeground(Color.WHITE);
-            credit.setFont(new Font("helvetica", Font.PLAIN, 50));
+            credit.setBounds(420, 100, 500, 100);
+            credit.setForeground(Color.black);
+            credit.setFont(new Font("American Typewriter", Font.PLAIN, 50));
+            credit.setBorder(BorderFactory.createMatteBorder(6,6,6,6,Color.decode("#023E8A")));
+            credit.setHorizontalAlignment(SwingConstants.CENTER);
+            credit.setVerticalAlignment(SwingConstants.CENTER);
+//            credit.setBorder(BorderFactory.createCompoundBorder(one,two));
             backgroundPanel.add(credit);
 
-        pnl2 = new JPanel();
-       pnl2.setLayout(null);
-        pnl2.setBounds(400,100,500,100);
-        pnl2.setBackground(Color.BLACK);
-        backgroundPanel.add(pnl2);
+
+
+//        pnl2 = new JPanel();
+//       pnl2.setLayout(null);
+//        pnl2.setBounds(400,100,500,100);
+//        pnl2.setBackground(Color.BLACK);
+//        backgroundPanel.add(pnl2);
 
             JLabel text = new JLabel("Play And Win");
             text.setBounds(500, 0, 700, 100);
-            text.setForeground(Color.WHITE);
+            text.setForeground(Color.decode("#023E8A"));
             text.setFont(new Font("Helvetica", Font.PLAIN, 50));
             backgroundPanel.add(text);
 
@@ -69,7 +79,7 @@ public class Quiztext extends JFrame implements ActionListener {
 
             text2 = new JLabel();
             text2.setBounds(300, 270, 2000, 100);
-            text2.setForeground(Color.WHITE);
+            text2.setForeground(Color.BLACK);
             text2.setFont(new Font("Aerial", Font.PLAIN, 30));
             backgroundPanel.add(text2);
 
@@ -79,7 +89,7 @@ public class Quiztext extends JFrame implements ActionListener {
             backgroundPanel.add(line2);
 
             btn1 = new JButton();
-            btn1.setBackground(Color.BLUE);
+            btn1.setBackground(Color.BLACK);
             btn1.setBounds(20, 450, 400, 50);
             btn1.addActionListener((ActionListener) this);
             backgroundPanel.add(btn1);
