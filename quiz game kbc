@@ -1,4 +1,6 @@
-import kbc;
+
+package kbc;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,8 +17,9 @@ import javax.swing.border.Border;
 import static javax.swing.BorderFactory.createEtchedBorder;
 
 
-public class Quiztext extends JFrame implements ActionListener {
+class Quiztext extends JFrame implements ActionListener {
     static int a = 0, b = 0, data = 0, five = 0, pole = 0;
+    private final JPanel pnl3;
     private JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
     private JLabel line1;
     private JLabel text2;
@@ -50,8 +53,8 @@ public class Quiztext extends JFrame implements ActionListener {
             pnl1.add(backgroundPanel);
 
 
-            credit = new JLabel("Simple Quiz Game");
-            credit.setBounds(420, 100, 500, 100);
+            credit = new JLabel("Play And Win a Chocolate");
+            credit.setBounds(300, 100, 780, 100);
             credit.setForeground(Color.decode("#8bbfed"));
             credit.setFont(new Font("American Typewriter", Font.BOLD, 50));
             credit.setBorder(BorderFactory.createMatteBorder(7,7,7,7,Color.decode("#94a2cf")));
@@ -63,16 +66,16 @@ public class Quiztext extends JFrame implements ActionListener {
 
             pnl2 = new JPanel();
             pnl2.setLayout(null);
-            pnl2.setBounds(420,100,500,100);
+            pnl2.setBounds(300,100,780,100);
             pnl2.setBackground(Color.white);
 //       pnl1.add(pnl2);
                    backgroundPanel.add(pnl2);
 
 
-            JLabel text = new JLabel("Play And Win");
-            text.setBounds(460, 0, 650, 100);
+            JLabel text = new JLabel("Ko Bancha Crorepati!!");
+            text.setBounds(380, 0, 700, 100);
             text.setForeground(Color.decode("#94a2cf"));
-            text.setFont(new Font("American Typewriter", Font.BOLD, 60));
+            text.setFont(new Font("American Typewriter", Font.BOLD, 50));
 //            pnl1.add(text);
                    backgroundPanel.add(text);
 ////
@@ -84,12 +87,19 @@ public class Quiztext extends JFrame implements ActionListener {
             text2 = new JLabel();
             text2.setBounds(180, 290, 1000, 100);
             text2.setForeground(Color.BLACK);
-            text2.setFont(new Font("American Typewriter", Font.PLAIN, 30));
-            text2.setBorder(BorderFactory.createMatteBorder(4,4,4,4,Color.decode("#023e8a")));
+            text2.setFont(new Font("American Typewriter", Font.PLAIN, 20));
+            text2.setBorder(BorderFactory.createMatteBorder(4,4,4,4,Color.decode("#94a2cf")));
             text2.setHorizontalAlignment(SwingConstants.CENTER);
             text2.setVerticalAlignment(SwingConstants.CENTER);
+            backgroundPanel.add(text2);
+            pnl3 = new JPanel();
+            pnl3.setLayout(null);
+            pnl3.setBounds(180,290,1000,100);
+            pnl3.setBackground(Color.white);
+//       pnl1.add(pnl2);
+            backgroundPanel.add(pnl3);
 //            pnl1.add(text2);
-                   backgroundPanel.add(text2);
+                   
 //
 //            line2 = new JLabel("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 //            line2.setBounds(0, 350, 2000, 100);
@@ -153,8 +163,8 @@ public class Quiztext extends JFrame implements ActionListener {
             backgroundPanel.add(ans);
 
             score = new JLabel();
-            score.setBounds(1000, 50, 700, 100);
-            score.setForeground(Color.decode("#ffff"));
+            score.setBounds(1000, 120, 700, 100);
+            score.setForeground(Color.black);
             score.setFont(new Font("American Typewriter", Font.PLAIN, 20));
             backgroundPanel.add(score);
 
@@ -381,6 +391,7 @@ public class Quiztext extends JFrame implements ActionListener {
             }
             else if (a == 3 && data == 3)
             {
+                ans.setText("");
                 text2.setText("4. Who is the father of C programming language?");
                 btn1.setText("A.)Tim Berners-Lee");
                 btn2.setText("B.)James Gosling");
@@ -424,6 +435,7 @@ public class Quiztext extends JFrame implements ActionListener {
             }
             else if (a == 7 && data == 7)
             {
+                ans.setText("");
                 text2.setText("8. Which of the following is designed to control the operations of a computer?");
                 btn1.setText("A.)Utility Software");
                 btn2.setText("B.)Programming Software");
